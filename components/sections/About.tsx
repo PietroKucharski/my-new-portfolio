@@ -1,12 +1,12 @@
-import data from '@/data';
-import Reveal from '@/components/ui/Reveal';
-import SectionHeader from '@/components/ui/SectionHeader';
+import data from "@/data";
+import Reveal from "@/components/ui/Reveal";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function About() {
   return (
     <section
       id="sobre"
-      className="relative max-w-[1280px] mx-auto px-6 md:px-12 py-28 md:py-36"
+      className="relative max-w-7xl mx-auto px-6 md:px-12 py-28 md:py-36"
     >
       <SectionHeader
         index="01"
@@ -30,7 +30,7 @@ export default function About() {
             <span className="font-display font-extrabold text-[7rem] text-paper relative z-10">
               PK
             </span>
-            <div className="absolute inset-0 bg-acid/0 group-hover:bg-acid/[0.06] transition-colors" />
+            <div className="absolute inset-0 bg-acid/0 group-hover:bg-acid/6 transition-colors" />
             <span className="absolute bottom-4 left-4 font-mono text-[11px] text-dim z-10">
               // dev.full_stack
             </span>
@@ -50,7 +50,11 @@ export default function About() {
 
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-px bg-line border border-line">
             {data.stats.map((s, k) => (
-              <Reveal key={k} delay={120 + k * 90} className="bg-ink2 p-5 md:p-6">
+              <Reveal
+                key={k}
+                delay={120 + k * 90}
+                className="bg-ink2 p-5 md:p-6"
+              >
                 <div className="font-display font-extrabold text-acid text-[clamp(1.8rem,4vw,2.8rem)] leading-none">
                   {s.n}
                 </div>
