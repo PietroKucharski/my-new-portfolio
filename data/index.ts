@@ -50,13 +50,12 @@ const data: PortfolioData = {
     "TypeScript · Next.js · Node.js",
     "React · NestJS · Prisma ORM",
   ],
-  location: "Balneário Camboriú, SC — Brasil",
+  location: "Brusque, SC — Brasil",
   email: "pietrokucharski@hotmail.com",
   linkedin: "https://www.linkedin.com/in/pietro-kucharski-4b624b1b8/",
   github: "https://github.com/PietroKucharski",
   bio: "Desenvolvedor Full Stack com foco em aplicações modernas usando TypeScript, Next.js, Node.js e React. Atuo no front e back-end, com experiência em APIs RESTful, integração com serviços externos e modelagem de bancos de dados relacionais. Já desenvolvi sistemas reais para diferentes empresas — gestão de fornecedores, orçamentos e ERP.",
-  bio2:
-    "Perfil colaborativo, comprometido com boas práticas de código e em constante evolução técnica. Inglês para leitura e escrita (B1).",
+  bio2: "Perfil colaborativo, comprometido com boas práticas de código e em constante evolução técnica. Inglês para leitura e escrita (B1).",
   stats: [
     { n: "3+", label: "anos de\nexperiência" },
     { n: "03", label: "empresas\natendidas" },
@@ -66,7 +65,15 @@ const data: PortfolioData = {
   skills: [
     {
       cat: "Front-end",
-      items: ["TypeScript", "JavaScript", "React", "Next.js", "HTML", "CSS", "TailwindCSS"],
+      items: [
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "HTML",
+        "CSS",
+        "TailwindCSS",
+      ],
     },
     {
       cat: "Back-end",

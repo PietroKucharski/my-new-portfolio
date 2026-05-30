@@ -1,14 +1,14 @@
-import data from '@/data';
+import data from "@/data";
 
 const row = [
-  'FULL STACK',
-  'TYPESCRIPT',
-  'NEXT.JS',
-  'NODE.JS',
-  'REACT',
-  'NESTJS',
-  'PRISMA',
-  'DOCKER',
+  "FULL STACK",
+  "TYPESCRIPT",
+  "NEXT.JS",
+  "NODE.JS",
+  "REACT",
+  "NESTJS",
+  "PRISMA",
+  "DOCKER",
 ];
 
 export default function Footer() {
@@ -33,7 +33,7 @@ export default function Footer() {
       </div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row gap-3 justify-between items-center font-mono text-xs text-dim">
         <span>© 2026 {data.fullName}</span>
-        <span>Balneário Camboriú, SC · Brasil</span>
+        <span>Brusque, SC · Brasil</span>
         <span>
           Feito com <span className="text-acid">&lt;/&gt;</span> + café
         </span>

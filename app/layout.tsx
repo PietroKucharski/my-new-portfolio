@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Pietro Kucharski — Full Stack Developer",
   description:
-    "Desenvolvedor Full Stack com foco em aplicações modernas usando TypeScript, Next.js, Node.js e React. Balneário Camboriú, SC — Brasil.",
+    "Desenvolvedor Full Stack com foco em aplicações modernas usando TypeScript, Next.js, Node.js e React. Brusque, SC — Brasil.",
   keywords: [
     "Full Stack Developer",
     "TypeScript",
