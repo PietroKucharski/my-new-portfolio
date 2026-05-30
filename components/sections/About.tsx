@@ -1,3 +1,4 @@
+import Image from "next/image";
 import data from "@/data";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -26,10 +27,12 @@ export default function About() {
             data-hot
             className="relative border border-line bg-card aspect-square flex items-center justify-center overflow-hidden group"
           >
-            <div className="absolute inset-0 gridbg opacity-30" />
-            <span className="font-display font-extrabold text-[7rem] text-paper relative z-10">
-              PK
-            </span>
+            <Image
+              src="/pk-image.jpg"
+              alt="Pietro Kucharski"
+              fill
+              className="object-cover object-top"
+            />
             <div className="absolute inset-0 bg-acid/0 group-hover:bg-acid/6 transition-colors" />
             <span className="absolute bottom-4 left-4 font-mono text-[11px] text-dim z-10">
               // dev.full_stack
