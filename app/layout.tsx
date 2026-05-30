@@ -39,6 +39,15 @@ export const metadata: Metadata = {
       "Desenvolvedor Full Stack com foco em aplicações modernas usando TypeScript, Next.js, Node.js e React.",
     type: "website",
     locale: "pt_BR",
+    url: "https://www.pietrokucharski.dev",
+    siteName: "Pietro Kucharski",
+    images: [{ width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pietro Kucharski — Full Stack Developer",
+    description:
+      "Desenvolvedor Full Stack com foco em aplicações modernas usando TypeScript, Next.js, Node.js e React.",
   },
 };
 
