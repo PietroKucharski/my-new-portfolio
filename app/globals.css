@@ -1,26 +1,212 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ink: #080c10;
+  --color-ink2: #0b1117;
+  --color-paper: #f2f3f2;
+  --color-dim: #8893a0;
+  --color-acid: #00ff87;
+  --color-ember: #ff6b35;
+  --color-card: #0e141b;
+  --color-line: #1b242f;
+
+  --font-display: var(--font-syne), sans-serif;
+  --font-sans: var(--font-space-grotesk), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --acid: #00ff87;
+  --ember: #ff6b35;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #080c10;
+  color: #f2f3f2;
+  font-family: var(--font-space-grotesk), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--acid);
+  color: #04110a;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #080c10;
+}
+::-webkit-scrollbar-thumb {
+  background: #1b242f;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3744;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor-on,
+  .cursor-on a,
+  .cursor-on button {
+    cursor: none;
+  }
+
+  .cur-dot,
+  .cur-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cur-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--acid);
+  }
+
+  .cur-ring {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(0, 255, 135, 0.55);
+    transition: width 0.22s ease, height 0.22s ease, background 0.22s ease,
+      border-color 0.22s ease;
+  }
+
+  .cur-ring.hot {
+    width: 56px;
+    height: 56px;
+    background: rgba(0, 255, 135, 0.1);
+    border-color: rgba(0, 255, 135, 0.9);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(42px);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.85s cubic-bezier(0.16, 0.84, 0.3, 1),
+    transform 0.85s cubic-bezier(0.16, 0.84, 0.3, 1);
+}
+
+.reveal-x {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+.reveal-x.in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s cubic-bezier(0.16, 0.84, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 0.84, 0.3, 1);
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.caret {
+  display: inline-block;
+  width: 0.62ch;
+  background: var(--acid);
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+  color: transparent;
+}
+
+@keyframes gridDrift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 64px 64px, 64px 64px;
+  }
+}
+.gridbg {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+  background-size: 64px 64px, 64px 64px;
+  animation: gridDrift 22s linear infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+.glow {
+  animation: glowPulse 9s ease-in-out infinite;
+}
+
+.marquee-track {
+  animation: marq 32s linear infinite;
+}
+@keyframes marq {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.underline-grow {
+  background-image: linear-gradient(var(--acid), var(--acid));
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.4s cubic-bezier(0.16, 0.84, 0.3, 1);
+}
+.underline-grow:hover {
+  background-size: 100% 1.5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-x {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .gridbg,
+  .glow,
+  .marquee-track {
+    animation: none !important;
+  }
 }
