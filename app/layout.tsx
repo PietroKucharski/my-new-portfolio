@@ -41,7 +41,6 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     url: "https://www.pietrokucharski.dev",
     siteName: "Pietro Kucharski",
-    images: [{ width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
